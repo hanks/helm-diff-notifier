@@ -1,0 +1,6 @@
+# coverage
+c.out
+coverage.html
+
+# go
+vendor

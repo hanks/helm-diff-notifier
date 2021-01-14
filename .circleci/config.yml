@@ -1,0 +1,35 @@
+version: 2
+
+executors:
+  machine:
+    machine:
+      image: ubuntu-2004:202010-01
+
+jobs:
+  run-test:
+    executor: machine
+    steps:
+      - checkout
+      - run:
+          name: Run test
+          command: make test
+
+  run-build:
+    executor: machine
+    steps:
+      - checkout
+      - run:
+          name: Run build
+          command: make build
+
+workflows:
+  version: 2
+  test-and-build:
+    jobs:
+      - run-test
+      - run-build:
+          requires:
+            - run-test
+          filters:
+            branches:
+              only: main
