@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/hanks/helm-diff-notifier/badge.svg?branch=main)](https://coveralls.io/github/hanks/helm-diff-notifier?branch=main) [![Go Report Card](https://goreportcard.com/badge/github.com/hanks/helm-diff-notifier)](https://goreportcard.com/report/github.com/hanks/helm-diff-notifier) [![CircleCI](https://circleci.com/gh/hanks/helm-diff-notifier.svg?style=svg)](https://circleci.com/gh/hanks/helm-diff-notifier)
+
 # Introduction
 
 Helm Diff Notifier is a simple tool based on [helm-diff](https://github.com/databus23/helm-diff), mainly using in the CI pipeline, to send the helm diff result to GitHub PR review page.

@@ -13,6 +13,9 @@ jobs:
       - run:
           name: Run test
           command: make test
+      - run:
+          name: Upload coveralls report
+          command: make coveralls
 
   run-build:
     executor: machine
@@ -26,7 +29,9 @@ workflows:
   version: 2
   test-and-build:
     jobs:
-      - run-test
+      - run-test:
+          context:
+            - common
       - run-build:
           requires:
             - run-test

@@ -36,7 +36,7 @@ build: clean
 	sudo rm ./dist/bin/$(IMAGE_NAME)_darwin_amd64_$(IMAGE_VERSION)
 
 coveralls:
-	docker run -it --rm -v $(CUR):${WORKSPACE} ${IMAGE} goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $(COVERALLS_TOKEN)
+	docker run -it --rm -v $(CUR):${WORKSPACE} ${IMAGE} goveralls -coverprofile=coverage.out -service=circle-ci -repotoken ${COVERALLS_TOKEN}
 
 clean:
 	rm -rf ./dist
